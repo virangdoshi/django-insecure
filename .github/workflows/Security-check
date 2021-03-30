@@ -5,6 +5,7 @@ on: pull_request_target
 env:
   FAIL_LEVEL: WARNING
   ENV_TYPE: pipenv
+  APP_PATH: insecure/
 
 jobs:
   build:
