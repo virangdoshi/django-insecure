@@ -7,7 +7,7 @@ on:
 env:
   FAIL_LEVEL: WARNING
   ENV_TYPE: pipenv
-  working-directory: ./insecure
+  # working-directory: ./insecure
 
 jobs:
   build:
@@ -21,7 +21,7 @@ jobs:
           fetch-depth: 1
       - name: Restructure
         run: |
-          mv insecure/* .
+          cp insecure/* .
           ls
       - name: Scan Django settings for security issues
         id: check
