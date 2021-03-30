@@ -21,7 +21,7 @@ jobs:
           fetch-depth: 1
       - name: Restructure
         run: |
-          cp insecure/* .
+          cp -r insecure/* .
           ls
       - name: Scan Django settings for security issues
         id: check
