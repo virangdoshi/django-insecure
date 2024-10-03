@@ -1,4 +1,4 @@
-# Simple Django application with a number of built-in security vulnerabilities
+# Simple Django application with a number of built-in security vulnerabilitie
 
 Corresponding article with examples and explanation: [Stay paranoid and trust no one. Overview of common security vulnerabilities in web applications](https://lchsk.com/stay-paranoid-and-trust-no-one-overview-of-common-security-vulnerabilities-in-web-applications.html)
 
