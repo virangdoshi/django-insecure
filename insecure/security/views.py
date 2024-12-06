@@ -3,6 +3,7 @@ import os
 import pickle
 from dataclasses import dataclass
 import base64
+import subprocess
 
 from django.http import HttpResponse, JsonResponse
 from django.utils.safestring import mark_safe
@@ -35,9 +36,10 @@ def read_file(request, filename):
 def copy_file(request, filename):
     """Copy a file in a very dangerous way"""
 
-    cmd = f'cp {filename} new_{filename}'
-
-    os.system(cmd)
+    allowed_commands = ['cp']
+    command = ['cp', filename, f'new_{filename}']
+    if command[0] in allowed_commands:
+        subprocess.run(command, shell=False)
 
     return HttpResponse("All good, don't worry about a thing :>")
 
