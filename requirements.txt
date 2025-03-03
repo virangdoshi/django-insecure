@@ -2,3 +2,4 @@ Django==3.0.12
 requests==2.22.0
 ipdb==0.12.3
 bandit==1.6.2
+urllib3>=1.26.5 # not directly required, pinned by Snyk to avoid a vulnerability
