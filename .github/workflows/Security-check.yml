@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: test
+        run: "aws sts get-caller-identity"
       - name: Check out master
         uses: actions/checkout@master
         with:
