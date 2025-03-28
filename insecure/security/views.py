@@ -28,14 +28,14 @@ def safe_users(request, user_id):
 
 
 def read_file(request, filename):
-    with open(filename) as f:
+    with open(os.path.basename(filename)) as f:
         return HttpResponse(f.read())
 
 
 def copy_file(request, filename):
     """Copy a file in a very dangerous way"""
 
-    cmd = f'cp {filename} new_{filename}'
+    cmd = f'cp {os.path.basename(filename)} new_{os.path.basename(filename)}'
 
     os.system(cmd)
 
