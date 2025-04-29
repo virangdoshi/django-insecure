@@ -3,9 +3,9 @@ import os
 import pickle
 from dataclasses import dataclass
 import base64
-
 from django.http import HttpResponse, JsonResponse
 from django.utils.safestring import mark_safe
+from django.utils.html import escape
 
 from security.models import User
 
@@ -81,8 +81,9 @@ def search(request):
     """Search functionality prone to XSS"""
 
     query = request.GET.get('query', '')
+    safe_query = escape(query)
 
-    response = HttpResponse(f"Query: {query}")
+    response = HttpResponse(f"Query: {safe_query}")
 
     # Override browser's protection, if exsits
     response['X-XSS-Protection'] = 0
